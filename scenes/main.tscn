@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://4tbrhf7d4gsk"]
+
+[ext_resource type="PackedScene" uid="uid://cbmqychkh5ph4" path="res://scenes/player.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://4p2gopp57gv4" path="res://scenes/inputflag.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://bjg1et4bypv7k" path="res://scenes/canvas_layer.tscn" id="3_sugp2"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(387, 325)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(95, 0)
+
+[node name="flags" type="Node" parent="."]
+
+[node name="inputFlag" parent="flags" instance=ExtResource("2_0wfyh")]
+position = Vector2(598, 325)
+scale = Vector2(1.00164, 11.9757)
+
+[node name="inputFlag2" parent="flags" instance=ExtResource("2_0wfyh")]
+position = Vector2(787, 325)
+scale = Vector2(1.00164, 11.9757)
+
+[node name="inputFlag3" parent="flags" instance=ExtResource("2_0wfyh")]
+position = Vector2(1040, 325)
+scale = Vector2(1.00164, 11.9757)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("3_sugp2")]
+
+[connection signal="needsbar" from="Player" to="CanvasLayer" method="_on_player_needsbar"]
+[connection signal="hit" from="flags/inputFlag" to="Player" method="_on_input_flag_hit"]
+[connection signal="hit" from="flags/inputFlag" to="CanvasLayer" method="_on_input_flag_hit"]
+[connection signal="hit" from="flags/inputFlag2" to="Player" method="_on_input_flag_hit"]
+[connection signal="hit" from="flags/inputFlag3" to="Player" method="_on_input_flag_hit"]
+[connection signal="canmovenow" from="CanvasLayer" to="Player" method="_on_canvas_layer_canmovenow"]

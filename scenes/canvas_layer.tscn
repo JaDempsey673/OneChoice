@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjg1et4bypv7k"]
+
+[ext_resource type="Script" uid="uid://c0v1i06ho8gqn" path="res://scripts/canvas_layer.gd" id="1_c4rma"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_c4rma")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -78.0
+offset_right = 250.0
+offset_bottom = -51.0
+grow_horizontal = 2
+grow_vertical = 0
+max_value = 3.0
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -158.0
+offset_right = 150.0
+offset_bottom = -108.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "STAB"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
