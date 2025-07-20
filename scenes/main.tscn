@@ -8,6 +8,7 @@
 
 [node name="Player" parent="." instance=ExtResource("1_o5qli")]
 position = Vector2(387, 325)
+scale = Vector2(4, 4)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(95, 0)
@@ -15,15 +16,15 @@ position = Vector2(95, 0)
 [node name="flags" type="Node" parent="."]
 
 [node name="inputFlag" parent="flags" instance=ExtResource("2_0wfyh")]
-position = Vector2(598, 325)
+position = Vector2(767, 325)
 scale = Vector2(1.00164, 11.9757)
 
 [node name="inputFlag2" parent="flags" instance=ExtResource("2_0wfyh")]
-position = Vector2(787, 325)
+position = Vector2(1927, 325)
 scale = Vector2(1.00164, 11.9757)
 
 [node name="inputFlag3" parent="flags" instance=ExtResource("2_0wfyh")]
-position = Vector2(1040, 325)
+position = Vector2(1346, 325)
 scale = Vector2(1.00164, 11.9757)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("3_sugp2")]
